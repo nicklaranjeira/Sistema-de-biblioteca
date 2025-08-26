@@ -18,6 +18,8 @@ def cadastro(pessoas):
         print(" Opção inválida!")
         input("Pressione ENTER para continuar...")
         return None
+    
+# --------------------------------------------------------------------------------
 
 def cadastro_usuario(pessoas):
     os.system("cls")
@@ -32,6 +34,7 @@ def cadastro_usuario(pessoas):
     input("\nPressione ENTER para continuar...")
     return {"id": user_id, "tipo": "usuario", "nome": nome, "email": email}
 
+#---------------------------------------------------------------------------------
 
 def cadastro_bibliotecario(pessoas):
     os.system("cls")
@@ -54,6 +57,8 @@ def cadastro_bibliotecario(pessoas):
     input("\nPressione ENTER para continuar...")
     return {"id": user_id, "tipo": "bibliotecario", "nome": nome, "email": email}
 
+#---------------------------------------------------------------------------------
+
 def cadastro_livro():
     titulo = input("Digite o titulo do livro: ")
     categorialivros = input("Digite a categoria do livro (ROMANCE TERROR FANTASIA): ").upper()
@@ -64,11 +69,15 @@ def cadastro_livro():
         print("Categoria errada")
     pass
 
+#---------------------------------------------------------------------------------
+
 def emprestar():
     print("Emprestar:")
     print()
     print("Qual seu genêro de interesse?:")
     print("")
+
+#---------------------------------------------------------------------------------
 
 def devolver():
     print ("--- Devolução de livros ----")
@@ -95,8 +104,21 @@ def devolver():
         os.system ("cls")
         pass
 
+#---------------------------------------------------------------------------------
+
 def atualizar():
+    categoria_antiga = input("Qual a categoria de agora do livro que você quer atualizar? (ROMANCE TERROR FANTASIA): ").upper()
+    nome_antigo = input("Qual o nome atual do livro?: ")
+    if categoria_antiga in livros and nome_antigo in livros[categoria_antiga]:
+        print("Livro encontrado o que você quer atualizar?")
+        print("1 - Mudar o nome do livro")
+        print("2 - Mudar a categoria do livro")
+        opcao = input("Digite sua opção: ")
+
+        
     pass 
+
+#---------------------------------------------------------------------------------
 
 def listar_livros():
     pass
