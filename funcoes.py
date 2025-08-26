@@ -140,15 +140,32 @@ def devolver(self):
 #---------------------------------------------------------------------------------
 
 def atualizar():
-    categoria_antiga = input("Qual a categoria de agora do livro que você quer atualizar? (ROMANCE TERROR FANTASIA): ").upper()
+    genero_antigo = input("Qual a categoria de agora do livro que você quer atualizar? (ROMANCE TERROR FANTASIA): ").upper()
     nome_antigo = input("Qual o nome atual do livro?: ")
-    if categoria_antiga in livros and nome_antigo in livros[categoria_antiga]:
+    if genero_antigo in livros and nome_antigo in livros[genero_antigo]:
         print("Livro encontrado o que você quer atualizar?")
-        print("1 - Mudar o nome do livro")
-        print("2 - Mudar a categoria do livro")
-        opcao = input("Digite sua opção: ")
-
+        print("1 - Trocar o nome do livro")
+        print("2 - Trocar o genero do livro")
+        opcao = input("Digite sua opcao: ")
         
+        if opcao == '1':
+            novo_nome = input("Digite o nome novo para o livro: ")
+            livro_info = livros[genero_antigo].pop(nome_antigo)
+            livros[genero_antigo][novo_nome] = livro_info
+            print(f"O nome '{nome_antigo}' foi atualizado para '{novo_nome}'.")
+
+        elif opcao == '2':
+            novo_genero = input("Digite o genero novo do livro: ").upper()
+            if novo_genero in livros:
+                livro_info = livros[genero_antigo].pop(nome_antigo)
+                livros[novo_genero][nome_antigo] = livro_info
+                print(f"O livro '{nome_antigo}' foi para o genero '{novo_genero}'.")
+            else:
+                print("Novo genero errado a atualização não foi feita.")
+        else:
+            print("Opcao errada.")
+    else:
+        print("Livro não encontrado.")
     pass 
 
 #---------------------------------------------------------------------------------
