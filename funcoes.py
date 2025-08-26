@@ -6,6 +6,7 @@ livros = {
 }
 
 pessoas = {}
+livros_emprestados = []
 
 def menu():
     while True:
@@ -116,30 +117,25 @@ def emprestar():
 
 #---------------------------------------------------------------------------------
 
-def devolver():
+def devolver(self):
     print ("--- Devolução de livros ----")
     escolha=int(input("Deseja devolver algum livro? \n 1. Sim \n 2. Não \n 0. Sair \n ->"))
     if escolha == 1:
-        devolver=int(input("Informe o livro que deseja devolver \n ->"))
-
-
-
+        for chave, valor in livros_emprestados.items():
+            print(f"{chave}º - {valor.getTitulo()}")
+        devolver=int(input("Digite o número do livro que você deseja devolver: \n ->"))
+        del livros_emprestados[devolver]
     elif escolha == 2:
-        pass
-
-
+        break
     elif escolha == 0:
         print ("Saindo...")
         os.system ("pause")
         os.system ("cls")
-        pass
-
-    
+        
     else:
         print ("Opção invalida, tente novamente")
         os.system ("pause")
         os.system ("cls")
-        pass
 
 #---------------------------------------------------------------------------------
 
