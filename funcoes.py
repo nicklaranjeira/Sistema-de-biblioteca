@@ -5,6 +5,8 @@ livros = {
         'FANTASIA' : {}
 }
 
+pessoas = {}
+
 def menu():
     while True:
         print("Escolha uma opção: ")
