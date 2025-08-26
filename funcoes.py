@@ -71,7 +71,29 @@ def emprestar():
     print("")
 
 def devolver():
-    pass
+    print ("--- Devolução de livros ----")
+    escolha=int(input("Deseja devolver algum livro? \n 1. Sim \n 2. Não \n 0. Sair \n ->"))
+    if escolha == 1:
+        devolver=int(input("Informe o livro que deseja devolver \n ->"))
+
+
+
+    elif escolha == 2:
+        pass
+
+
+    elif escolha == 0:
+        print ("Saindo...")
+        os.system ("pause")
+        os.system ("cls")
+        pass
+
+    
+    else:
+        print ("Opção invalida, tente novamente")
+        os.system ("pause")
+        os.system ("cls")
+        pass
 
 def atualizar():
     pass 
