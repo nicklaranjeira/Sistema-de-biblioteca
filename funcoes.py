@@ -65,7 +65,10 @@ def cadastro_livro():
     pass
 
 def emprestar():
-    pass
+    print("Emprestar:")
+    print()
+    print("Qual seu genêro de interesse?:")
+    print("")
 
 def devolver():
     pass
