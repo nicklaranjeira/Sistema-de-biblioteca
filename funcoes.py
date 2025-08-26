@@ -5,6 +5,32 @@ livros = {
         'FANTASIA' : {}
 }
 
+def menu():
+    while True:
+        print("Escolha uma opção: ")
+        cadastro(pessoas)
+        if cadastro == 1:
+            while True:
+                print("Bem vindo a biblioteca online!")
+                cadastro_usuario(pessoas)
+                escolha_user = ("Escolha uma opção: \n1-Emprestar livro\n2-Devolver livro\n----->")
+                if escolha_user == 1:
+                    emprestar()
+                if escolha_user == 2:
+                    devolver()
+        if cadastro == 2:
+            while True:
+                print("Bem vindo bibliotecário!")
+                cadastro_bibliotecario(pessoas)
+                escolha_bibliotecario = ("Escolha uma opção: \n1-Cadastrar livro \n2-Atualizar informações\n3-Vizualizar\n----->")
+                if escolha_bibliotecario == 1:
+                    cadastro_livro()
+                if escolha_bibliotecario == 2:
+                    atualizar()
+                if escolha_bibliotecario == 3:
+                    listar_livros()
+        break
+
 def cadastro(pessoas):
     os.system("cls")
     print("-- TELA DE CADASTRO --\n")
@@ -67,8 +93,17 @@ def cadastro_livro():
 def emprestar():
     print("Emprestar:")
     print()
-    print("Qual seu genêro de interesse?:")
-    print("")
+    print("Qual seu gênero de interesse?: \n1-Romance\n2-Terror\n3-Fantasia")
+    emprestimo = int(input("------> "))
+    if emprestimo == 1:
+        #liros de romance
+        pass
+    if emprestimo == 2:
+        #livros de Terror 
+        pass
+    if emprestimo == 3:
+        #Livro de fantasia
+        pass
 
 def devolver():
     pass
